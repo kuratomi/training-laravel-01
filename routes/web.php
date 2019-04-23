@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('items', 'ItemController');
+Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
+Route::post('/categories/store', 'CategoryController@store')->name('categories.store');
+Route::resource('categories', 'CategoryController');
+
+
